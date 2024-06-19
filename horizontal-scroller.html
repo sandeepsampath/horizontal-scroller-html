@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Scroller</title>
+    <style>
+        .scrolling-logos {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 0;
+            background-color: rgba(245, 245, 245, 0.8); /* Optional: Add background color */
+            display: flex;
+            align-items: center; /* Center vertically */
+        }
+
+        .logos-container {
+            display: flex;
+            align-items: center;
+            animation: scroll 38s linear infinite;
+        }
+
+        .logos-container img {
+            display: inline-block;
+            margin: 0 15px;
+            height: 70px; /* Reduced height by 30% */
+            width: 105px; /* Reduced width by 30% */
+            object-fit: contain; /* Ensure logos maintain aspect ratio */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logos-container img {
+                height: 56px; /* Reduced height by 30% from 80px */
+                width: 84px; /* Reduced width by 30% from 120px */
+                margin: 0 10px; /* Adjust margin for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logos-container img {
+                height: 42px; /* Reduced height by 30% from 60px */
+                width: 63px; /* Reduced width by 30% from 90px */
+                margin: 0 5px; /* Adjust margin for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scrolling-logos">
+        <div class="logos-container">
+            <img src="./azdevops.png" alt="Logo 1">
+            <img src="./Kubernetes.svg" alt="Logo 2">
+            <img src="./helm.png" alt="Logo 7">
+            <img src="./mongodb.png" alt="Logo 3">
+            <img src="./redis.png" alt="Logo 4">
+            <img src="./argocd.png" alt="Logo 5">
+            <img src="./docker.png" alt="Logo 6">
+            <img src="./kafka.png" alt="Logo 8">
+            <img src="./istio.png" alt="Logo 9">
+            <img src="./splunk.png" alt="Logo 10">
+            <img src="./terraform.png" alt="Logo 11">
+            <!-- Add more logos as needed -->
+            <img src="./azdevops.png" alt="Logo 1">
+            <img src="./Kubernetes.svg" alt="Logo 2">
+            <img src="./helm.png" alt="Logo 7">
+            <img src="./mongodb.png" alt="Logo 3">
+            <img src="./redis.png" alt="Logo 4">
+            <img src="./argocd.png" alt="Logo 5">
+            <img src="./docker.png" alt="Logo 6">
+            <img src="./kafka.png" alt="Logo 8">
+            <img src="./istio.png" alt="Logo 9">
+            <img src="./splunk.png" alt="Logo 10">
+            <img src="./terraform.png" alt="Logo 11">
+            <!-- Duplicate logos to ensure continuous scrolling -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.logos-container');
+            const logos = container.innerHTML;
+            container.innerHTML += logos;
+        });
+    </script>
+</body>
+</html>
